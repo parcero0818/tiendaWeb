@@ -1,0 +1,34 @@
+<h1>Prueba del modulo hppt</h1>
+
+<div class="container">
+	<div class="row">
+		<div class="col-8">
+			<table class="table table-striped">
+				<thead>
+					<th>Nombre</th>
+					<th>Descripcion</th>
+				</thead>
+				
+				<tbody>
+					<tr *ngFor="let item of productos">
+						<select><option *ngFor="let item of productos; let i =index" value="productos[i].id">{{item.id}}</option></select>
+						<td>{{item.nombre}}</td>
+						<td>{{item.descripcion}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="col-4">
+			<div class="form-group">
+				<label>Nombre</label>
+				<input type="text" [(ngModel)]="producto.nombre" class="form-control">
+			</div>
+			<div class="form-group">
+				<label>Descripción</label>
+				<input type="text" [(ngModel)]="producto.descripcion" class="form-control">
+			</div>
+			<button (click)="agregarProducto()" class="btn btn-primary">Agregar Producto</button>
+		</div>
+	</div>
+</div>
+
