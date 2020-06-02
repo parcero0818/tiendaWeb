@@ -1,33 +1,43 @@
-<h1>Prueba del modulo hppt</h1>
-
+<div class="jumbotron">
 <div class="container">
+
+	<p class="h1">Productos</p>
 	<div class="row">
-		<div class="col-8">
+		<div class="col-4">
+		<form [formGroup]="regForm" (ngSubmit)="agregarProducto()" class="form-group">
+				<div class="form-group">
+					<label>Nombre</label>
+					<input type="text" formControlName="nombre" class="form-control">
+				</div>
+				<div class="form-group">
+					<label>Descripcion</label>
+					<input type="text" class="form-control" formControlName="descripcion">
+				</div>
+				<div class="form-group">
+					<button type="submit" class="btn btn-primary" [disabled]="!regForm.valid">Agregar Producto</button>
+					<p class="h4"><a routerLink="/movimientos" routerLinkActive="active" >Ir a movimientos</a></p>
+				</div>
+			
+		</form>
+		</div>
+
+		<div class="col-6">
 			<table class="table table-striped">
 				<thead>
 					<th>Nombre</th>
 					<th>Descripcion</th>
+					<th>Cantidad disponible</th>
 				</thead>
 				
 				<tbody>
 					<tr *ngFor="let item of productos">
 						<td>{{item.nombre}}</td>
 						<td>{{item.descripcion}}</td>
+						<td>{{item.cantidadDisponible}}</td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
-		<div class="col-4">
-			<div class="form-group">
-				<label>Nombre</label>
-				<input type="text" [(ngModel)]="producto.nombre" class="form-control">
-			</div>
-			<div class="form-group">
-				<label>Descripcion</label>
-				<input type="text" [(ngModel)]="producto.descripcion" class="form-control">
-			</div>
-			<button (click)="agregarProducto()" class="btn btn-primary">Agregar Producto</button>
-		</div>
 	</div>
 </div>
-
+</div>
