@@ -21,7 +21,7 @@ export class ProductoComponent implements OnInit {
 
   obtenerProductos(){
     this.productoService.obtenerProductos().subscribe( resultado =>{
-      this.productos = resultado;
+      this.productos = resultado.productos;
     },
     error =>{
       console.error('Holaaaa' + JSON.stringify(error));

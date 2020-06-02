@@ -32,7 +32,7 @@ export class MovimientoComponent implements OnInit {
 
   obtenerProductos(){
     this.productoService.obtenerProductos().subscribe( resultado =>{
-      this.productos = resultado;
+      this.productos = resultado.productos;
     },
     error =>{
       console.error('Holaaaa' + JSON.stringify(error));
@@ -43,10 +43,9 @@ export class MovimientoComponent implements OnInit {
     this.producto.id = this.idProducto;
     this.producto.nombre = this.idProducto;
     this.movimiento.producto = this.producto;
-    console.log('idProducto '+this.idProducto);
-    console.log('producto '+this.movimiento.producto.id);
     this.movimientoService.registrarMovimiento(this.movimiento).subscribe( resultado =>{
-       console.log('registrado');
+      console.log(resultado);
+        
     },error =>{
       console.log(JSON.stringify(error));
     });

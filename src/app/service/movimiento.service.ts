@@ -10,10 +10,10 @@ export class MovimientoService {
 
   constructor(private httpClient: HttpClient) { }
 
-  registrarMovimiento(movimiento: any){
+  registrarMovimiento(movimiento: any): Observable<any>{
   	let json = JSON.stringify(movimiento);
   	let headers = new HttpHeaders().set('Content-type', 'application/json');
 
-  	return this.httpClient.post("http://localhost:2001/tienda/registrarMovimiento", json, {headers: headers})
+  	return this.httpClient.post("http://localhost:2001/tienda/movimientos/registrarMovimiento", json, {headers: headers})
   }
 }
