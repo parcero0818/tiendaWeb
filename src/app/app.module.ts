@@ -9,6 +9,9 @@ import { ProductoService } from './service/producto.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { MovimientoComponent } from './movimiento/movimiento.component';
+import { MovimientoService } from './service/movimiento.service';
+
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -21,9 +24,10 @@ import { MovimientoComponent } from './movimiento/movimiento.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [ProductoService],
+  providers: [ProductoService, MovimientoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

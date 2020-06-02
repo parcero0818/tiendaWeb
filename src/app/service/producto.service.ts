@@ -11,7 +11,6 @@ export class ProductoService {
   constructor(private httpClient: HttpClient) { }
 
   obtenerProductos(): Observable<any>{
-  	console.log('Lellgo');
   	return this.httpClient.get("http://localhost:2001/tienda/productos");
   }
 
