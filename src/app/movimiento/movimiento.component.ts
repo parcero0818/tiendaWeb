@@ -44,7 +44,7 @@ export class MovimientoComponent implements OnInit {
       this.tipo = "Compra";
     },
     error =>{
-      console.error('Holaaaa' + JSON.stringify(error));
+      console.error(JSON.stringify(error));
     });
   }
 

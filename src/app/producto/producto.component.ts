@@ -31,7 +31,7 @@ export class ProductoComponent implements OnInit {
       this.productos = resultado.productos;
     },
     error =>{
-      console.error('Holaaaa' + JSON.stringify(error));
+      console.error(JSON.stringify(error));
     });
   }
 
